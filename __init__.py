@@ -29,7 +29,7 @@ with open("qid-mid.pickle", "rb") as pickle_jar:
 print("Done")
 
 
-# In[205]:
+# In[2]:
 
 def all_lower(words):
     return words == words.lower()
@@ -196,7 +196,7 @@ def remove_brackets(concept):
     return concept.replace("{","").replace("}","")
 
 
-# In[206]:
+# In[6]:
 
 def Initial_anchor_noun_establishment(sentence, debug=False):
     glue_word = ['that', 'what', 'whom', 'which', 'where', 'whose', 'who', 'when', 'her', 'his', 'their', 'many', 'much',
@@ -296,7 +296,6 @@ def concept_expand(concept_list, sentence, debug):
                     candidate_concept = " ".join(terms[i-j:i]) + " "+ remove_brackets(term)
                     candidate_concept = remove_brackets(candidate_concept)
                     candidate_concept = deseparate_punctuation(candidate_concept)
-                    print(candidate_concept)
                     if is_in_entity_dict(candidate_concept):
                         concept_list.append((reseparate_punctuation(candidate_concept), "Hit"))
                     
@@ -460,7 +459,7 @@ def link_entity(sentence, concept_list, concept_dict, use_freebase, debug, no_No
     return result_sentence
 
 
-# In[168]:
+# In[4]:
 
 
 def find_entity(sentence, use_freebase=False, debug=False, no_None=False, detect_property=True):
